@@ -1,118 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moto Loadout</title>
-  <meta name="description" content="Moto Loadout helps motorcycle riders organise bikes, luggage, equipment and trip packing.">
+  <meta name="description" content="Plan it. Pack it. Find it. Moto Loadout helps motorcycle riders organise their bikes, customise luggage, plan trips, track packing and weight, and find their gear.">
+  <meta name="theme-color" content="#F5EAD9">
+  <title>Moto Loadout | Plan it. Pack it. Find it.</title>
   <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #F5EAD9;
       color: #0C0B09;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      box-sizing: border-box;
-    }
-
-    .content {
-      max-width: 720px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: 48px;
-      letter-spacing: 1px;
-    }
-
-    .tagline {
-      font-size: 22px;
-      font-weight: bold;
-      color: #AD211C;
-      margin-bottom: 32px;
-    }
-
-    p {
-      font-size: 18px;
       line-height: 1.6;
-      margin: 0 0 20px;
     }
-
-    .beta {
-      display: inline-block;
-      margin: 16px 0 28px;
-      padding: 8px 14px;
-      border: 1px solid #0C0B09;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: bold;
+    .page { max-width: 900px; margin: 0 auto; padding: 72px 24px 42px; }
+    .hero { text-align: center; }
+    h1 { margin: 0 0 4px; font-size: clamp(42px, 7vw, 62px); line-height: 1.15; letter-spacing: .5px; }
+    .tagline { margin: 0 0 28px; color: #AD211C; font-size: clamp(19px, 3vw, 24px); font-weight: 700; }
+    .intro { max-width: 710px; margin: 0 auto 14px; font-size: 19px; }
+    .audience { margin: 0 auto 26px; font-size: 17px; }
+    .stores { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin: 30px 0 10px; }
+    .store-link, .store-pending {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 230px; min-height: 52px; padding: 12px 20px;
+      border-radius: 9px; font-size: 16px; font-weight: 700;
+      text-decoration: none; text-align: center;
     }
-
-    .links {
-      margin-top: 32px;
-      font-size: 15px;
-    }
-
-    a {
-      color: #7E1614;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 13px;
-      opacity: 0.7;
+    .store-link { background: #0C0B09; color: #fff; border: 2px solid #0C0B09; }
+    .store-link:hover, .store-link:focus-visible { background: #AD211C; border-color: #AD211C; }
+    .store-pending { background: transparent; color: #4E473E; border: 2px solid #9B9389; }
+    .release-note { color: #5D554B; font-size: 14px; margin: 14px 0 0; }
+    .features { margin-top: 56px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .feature { padding: 22px 20px 18px; background: rgba(255,255,255,.48); border: 1px solid #D9CDBC; border-radius: 14px; }
+    .feature h2 { color: #AD211C; font-size: 21px; line-height: 1.3; margin: 0 0 10px; }
+    .feature p { margin: 0; font-size: 15px; }
+    .extra { max-width: 740px; text-align: center; margin: 34px auto 0; font-size: 16px; }
+    footer { text-align: center; margin-top: 54px; padding-top: 24px; border-top: 1px solid #D9CDBC; font-size: 14px; }
+    footer p { margin: 0 0 9px; }
+    a:not(.store-link) { color: #7E1614; font-weight: 700; }
+    a:focus-visible { outline: 3px solid #AD211C; outline-offset: 4px; }
+    .copyright { margin-top: 21px; opacity: .7; font-size: 13px; }
+    @media (max-width: 670px) {
+      .page { padding-top: 48px; }
+      .features { margin-top: 40px; grid-template-columns: 1fr; }
+      .stores { flex-direction: column; }
+      .store-link, .store-pending { width: 100%; max-width: 360px; }
     }
   </style>
 </head>
-
 <body>
-  <div class="page">
-    <main class="content">
-      <h1>Moto Loadout</h1>
-
-      <div class="tagline">Plan it. Pack it. Find it.</div>
-
-      <p>
-        Moto Loadout helps motorcycle riders organise their bikes, luggage and equipment,
-        build trip loadouts, decide where everything is stored and work through a packing
-        checklist before setting off.
+  <main class="page">
+    <section class="hero" aria-labelledby="page-title">
+      <h1 id="page-title">Moto Loadout</h1>
+      <p class="tagline">Plan it. Pack it. Find it.</p>
+      <p class="intro">
+        Organise your motorcycles, customise your luggage, plan what to take and keep track of where everything is packed.
+        Moto Loadout makes preparing for your next trip easier.
       </p>
-
-      <p>
-        Built for motorcycle touring, camping and adventure riding.
-      </p>
-
-      <div class="beta">Currently in beta testing</div>
-
-      <div class="links">
-        <p>
-          Contact:
-          <a href="mailto:support@motoloadout.app">support@motoloadout.app</a>
-        </p>
-
-        <p>
-          <a href="/privacy/">Privacy Policy</a>
-        </p>
+      <p class="audience">Built for motorcycle touring, camping and adventure riding.</p>
+      <div class="stores">
+        <a class="store-link" href="https://play.google.com/store/apps/details?id=com.markthornhillmoto.motoloadout" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
+        <span class="store-pending">iPhone version coming soon</span>
       </div>
+      <p class="release-note">Available now on Android. The iPhone version has been submitted to Apple for review.</p>
+    </section>
 
-      <footer>
-        &copy; 2026 Moto Loadout
-      </footer>
-    </main>
-  </div>
+    <section class="features" aria-label="What Moto Loadout does">
+      <article class="feature">
+        <h2>Plan it.</h2>
+        <p>Add your bikes, create and name your own luggage and storage locations, build an equipment library and assign gear to each trip. Add item and luggage weights to review how your load is distributed.</p>
+      </article>
+      <article class="feature">
+        <h2>Pack it.</h2>
+        <p>Use a packing checklist to see what is ready and what still needs packing, whether you are heading away for a weekend or a longer journey.</p>
+      </article>
+      <article class="feature">
+        <h2>Find it.</h2>
+        <p>Use Find My Gear to see which pannier, top box, tank bag or other storage location holds an assigned item, without searching through every bag.</p>
+      </article>
+    </section>
+
+    <p class="extra">Your packing information is available offline, with no account required.</p>
+
+    <footer>
+      <p>Need help? <a href="mailto:support@motoloadout.app">support@motoloadout.app</a></p>
+      <p><a href="privacy/">Privacy Policy</a></p>
+      <p class="copyright">&copy; 2026 Moto Loadout</p>
+    </footer>
+  </main>
 </body>
 </html>
